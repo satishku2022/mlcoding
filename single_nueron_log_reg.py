@@ -1,6 +1,7 @@
 
 
 #Implement Single Nueron
+#Using Mini Batches
 
 import numpy as np
 

@@ -1,3 +1,9 @@
+'''
+
+Linear Regression in PY
+
+'''
+
 import numpy as np
 
 class LinearRegression:
@@ -9,19 +15,19 @@ class LinearRegression:
 
     def fit(self, X,y ):
         n_samples , n_features = X.shape
-        print(f"{X.shape=}")
+        #print(f"{X.shape=}")
         self.weights = np.zeros(n_features)
         self.bias = np.zeros(1)
-        print(f"{self.weights=}")
-        print(f"{self.bias=}")
+        #print(f"{self.weights=}")
+        #print(f"{self.bias=}")
         for _ in range(self.n_iters):
             y_predicted = np.dot(X, self.weights) + self.bias
             dw = (1 / n_samples) * np.matmul(X.T, (y_predicted - y))
             db = (1 / n_samples) * np.sum(y_predicted - y)
             self.weights -= self.l_r * dw
             self.bias -= self.l_r * db
-        print(f"{self.weights=}")
-        print(f"{self.bias=}")
+        #print(f"{self.weights=}")
+        #print(f"{self.bias=}")
 
     def predict(self, X):
         y_predicted = np.dot(X, self.weights) + self.bias
